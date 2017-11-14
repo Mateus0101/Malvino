@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Login 
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="Login">
+
+  <div class="fixed">
+    <form>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+
+            <ion-list class="posicao-input">
+              <ion-item>
+                <ion-label>
+                  Login
+                </ion-label>
+                <ion-input type="text" [(ngModel)]="logar.login" name="login"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>
+                  Senha
+                </ion-label>
+                <ion-input type="password" [(ngModel)]="logar.senha" name="senha"></ion-input>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-list>
+
+              <button ion-button color="positive" block style="color:#FFFFFF;border-radius:3px 3px 3px 3px;" (click)="Logar()">
+                Entrar
+              </button>
+              <br>
+              <button ion-button clear color="dark" block small>
+                Recuperar a senha
+              </button>
+              <br>
+              <button ion-button outline color="positive" block (click)="signup()">
+                <ion-icon name="add-circle"></ion-icon>
+                Cadastrar
+              </button>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </div>
+</ion-content>

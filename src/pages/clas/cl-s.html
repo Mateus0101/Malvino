@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Clãs
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page6">
+  <div id="clS-container6">
+    <button id="clS-button17" ion-button color="balanced" block on-click="goToSolicitaEs()">
+      <ion-icon name="person-add"></ion-icon>
+      Solicitações
+    </button>
+    <ion-list id="clS-list8">
+      <ion-item-sliding>
+        <ion-item color="none" on-click="goToDetalhesDoCl()" id="clS-list-item41">
+          <ion-avatar item-left>
+            <img src="assets/imgs/838741769.jpg" />
+          </ion-avatar>
+          <h2>
+            Urminino
+          </h2>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="assertive">
+            Sair
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+    <div class="spacer" style="width:300px;height:6px;" id="clS-spacer5"></div>
+    <button id="clS-button18" ion-button color="positive" icon-left style="border-radius:299px 299px 299px 299px;">
+      <ion-icon name="create"></ion-icon>
+      Editar
+    </button>
+    <button id="clS-button9" ion-button color="positive" icon-left style="border-radius:300px 300px 300px 300px;">
+      <ion-icon name="trash"></ion-icon>
+      Excluir
+    </button>
+    <div class="spacer" style="width:300px;height:4px;" id="clS-spacer4"></div>
+  </div>
+  <form id="clS-form8">
+    <ion-searchbar placeholder="Pesquisar Cãs" name="pesquisa" id="clS-search3"></ion-searchbar>
+    <button id="clS-button5" ion-button color="positive" block style="font-weight:500;">
+      <ion-icon name="search"></ion-icon>
+      Pesquisar
+    </button>
+    <ion-item color="none" on-click="goToDetalhesDoCl()" id="clS-list-item38">
+      <ion-avatar item-left>
+        <img src="assets/img/838741769.jpg" />
+      </ion-avatar>
+      <h2>
+        Urminino
+      </h2>
+    </ion-item>
+  </form>
+  <button id="clS-button6" ion-button outline color="positive" block style="border-radius:300px 300px 300px 300px;" on-click="goToCriarCl()">
+    <ion-icon name="add"></ion-icon>
+    Criar novo Clã
+  </button>
+</ion-content>

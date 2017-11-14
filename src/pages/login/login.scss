@@ -1,0 +1,30 @@
+page-login {
+    #Login{
+        background-image: url("/assets/imgs/logo1.png");
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: 200px;
+        margin-top: 50px;
+
+        .text-div{
+            text-align: center;
+        }
+
+        //Fixa a tela para não rolar para baixo.
+        div.fixed { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width:100%;
+            height:100%;
+        }
+
+        .posicao-input{
+            margin-top: 250px;
+        }
+        
+        ion-col{
+            text-align: center;
+        } 
+    }
+}

@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Meus Dados
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page11">
+  <form id="meusDados-form12">
+    <ion-list id="meusDados-list9">
+      <ion-item color="none" on-click="goToImagemDoPerfil()" id="meusDados-list-item56">
+        <ion-avatar item-left>
+          <img />
+        </ion-avatar>
+        <h2>
+          Fulano
+        </h2>
+      </ion-item>
+      <ion-item id="meusDados-input9">
+        <ion-label>
+          Nome: "Dados do usuário"
+        </ion-label>
+        <ion-input type="text" placeholder=""></ion-input>
+      </ion-item>
+      <ion-item id="meusDados-input10">
+        <ion-label>
+          Email: "Dados do usuário"
+        </ion-label>
+        <ion-input type="email" placeholder=""></ion-input>
+      </ion-item>
+      <ion-item id="meusDados-input11">
+        <ion-label>
+          Login: "Dados do usuário"
+        </ion-label>
+        <ion-input type="email" placeholder=""></ion-input>
+      </ion-item>
+      <ion-item id="meusDados-input12">
+        <ion-label>
+          Senha: "Dados do usuário"
+        </ion-label>
+        <ion-input type="password" placeholder=""></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-item id="meusDados-select4">
+      <ion-label>
+        Gênero:
+      </ion-label>
+      <ion-select name="genero">
+        <ion-option>
+          "Dados do usuário"
+        </ion-option>
+        <ion-option>
+          Masculino
+        </ion-option>
+        <ion-option>
+          Feminio
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <button id="meusDados-button21" ion-button color="positive" block style="color:#FFFFFF;" on-click="goToEditarMeusDados()">
+      Editar
+    </button>
+    <button id="meusDados-button22" ion-button color="positive" block on-click="goToHome()">
+      Voltar
+    </button>
+  </form>
+</ion-content>

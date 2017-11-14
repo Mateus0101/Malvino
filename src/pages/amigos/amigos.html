@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Amigos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page14">
+  <div id="amigos-container7">
+    <form id="amigos-form15">
+      <button id="amigos-button28" ion-button color="balanced" block on-click="goToSolicitaEs()">
+        <ion-icon name="person-add"></ion-icon>
+        Solicitações
+      </button>
+      <ion-searchbar placeholder="Pesquisar" name="pesquisar" id="amigos-search4"></ion-searchbar>
+      <ion-item-sliding>
+        <ion-item color="none" on-click="goToConversaComJogador()" id="amigos-list-item63">
+          <ion-avatar item-left>
+            <img />
+          </ion-avatar>
+          <h2>
+            Fulano
+          </h2>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="light"></button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </form>
+    <button id="amigos-button32" ion-button color="positive" block style="font-weight:500;" on-click="goToPessoas()">
+      <ion-icon name="search"></ion-icon>
+      Todos resultados para "pesquisa"
+    </button>
+    <div class="spacer" style="width:300px;height:4px;" id="amigos-spacer7"></div>
+    <ion-list id="amigos-list23">
+      <ion-item-sliding>
+        <ion-item color="none" on-click="goToConversaComJogador()" id="amigos-list-item92">
+          <ion-avatar item-left>
+            <img />
+          </ion-avatar>
+          <h2>
+            Fulano
+          </h2>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="assertive">
+            Desfazer amizade
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+</ion-content>

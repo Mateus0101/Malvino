@@ -1,0 +1,21 @@
+<ion-header>
+ <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <img class="navbarLogo" src="assets/imgs/logo1.1.png" />
+ <ion-title>Home</ion-title>
+ </ion-navbar>
+</ion-header>
+
+<ion-content padding id="home">
+ <ion-list>
+ <ion-item *ngFor="let j of Jogadores">
+ <h2>Seja bem vindo {{j.nome}}</h2>
+ <p>Email: {{j.email}}</p>
+ <p>Login: {{j.login}}</p>
+ </ion-item>
+ </ion-list>
+ <button ion-button color="lightprimary" (click)="logout()">Sair</button>
+</ion-content>
+
