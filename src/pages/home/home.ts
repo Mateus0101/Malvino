@@ -1,19 +1,49 @@
 import { Component } from '@angular/core';
 import { NavController, App } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
-
 import { Login } from '../login/login';
+import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser';
 
 @Component({
     selector: 'page-home',
-    templateUrl: 'home.html'
+    templateUrl: 'home.html', 
+    providers: [InAppBrowser]
 
 })
 export class HomePage {
     Jogadores: string[];
     errorMessage: string;
+    options: InAppBrowserOptions = {
+        location: 'yes',//Or 'no' 
+        hidden: 'no', //Or  'yes'
+        clearcache: 'yes',
+        clearsessioncache: 'yes',
+        zoom: 'yes',//Android only ,shows browser zoom controls 
+        hardwareback: 'yes',
+        mediaPlaybackRequiresUserAction: 'no',
+        shouldPauseOnSuspend: 'no', //Android only 
+        closebuttoncaption: 'Close', //iOS only
+        disallowoverscroll: 'no', //iOS only 
+        toolbar: 'yes', //iOS only 
+        enableViewportScale: 'no', //iOS only 
+        allowInlineMediaPlayback: 'no',//iOS only 
+        presentationstyle: 'pagesheet',//iOS only 
+        fullscreen: 'yes',//Windows only    
+    };
 
-    constructor(public navCtrl: NavController, public rest: RestProvider, public app: App) {
+    constructor(private theInAppBrowser: InAppBrowser, public navCtrl: NavController, public rest: RestProvider, public app: App) {
+    }
+    public openWithSystemBrowser(url: string) {
+        let target = "_system";
+        this.theInAppBrowser.create(url, target, this.options);
+    }
+    public openWithInAppBrowser(url: string) {
+        let target = "_blank";
+        this.theInAppBrowser.create(url, target, this.options);
+    }
+    public openWithCordovaBrowser(url: string) {
+        let target = "_self";
+        this.theInAppBrowser.create(url, target, this.options);
     }
 
 
@@ -32,11 +62,14 @@ export class HomePage {
         this.navCtrl.setRoot(Login);
     }
 
-    jogo_da_velha() {
+    jogar_t_rex() {
+        const browser = this.theInAppBrowser.create('http://192.168.1.9:8080/Malvino/pages/T-Rex/index.html', '_self', "location=yes");
+        browser.show();
+   }
 
-    }
-
-    t_rex() {
-
-    }
+   jogar_jogo_da_velha() {
+    const browser = this.theInAppBrowser.create('http://192.168.1.9:8080/Malvino/pages/JogoDaVelha/velha.html', '_self', "location=yes");
+    browser.show();
 }
+}
+

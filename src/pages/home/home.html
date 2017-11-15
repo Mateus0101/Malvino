@@ -17,10 +17,22 @@
  </ion-item>
  </ion-list>-->
     <ion-list align="center">
-        <button img src="assets/img/img-icon.png" round ion-button color="lightprimary" (click)="jogo_da_velha()">Jogo da Velha</button>
-        <p></p>
-        <button round ion-button color="lightprimary" (click)="t_rex()">T-RX</button>
-        <p></p>
+        <ion-item>
+            <ion-thumbnail item-start>
+                <img src="assets/imgs/T-REX.jpg">
+            </ion-thumbnail>
+            <h2>T-REX</h2>
+            <p>Descrição</p>
+            <button round item-end  ion-button color="lightprimary" (click)="jogar_t_rex()">JOGAR</button>
+        </ion-item>
+        <ion-item>
+                <ion-thumbnail item-start>
+                    <img src="assets/imgs/jogo_da_velha.jpg">
+                </ion-thumbnail>
+                <h2>JOGO DA VELHA</h2>
+                <p>Descrição</p>
+                <button  round item-end  ion-button color="lightprimary" (click)="jogar_jogo_da_velha()">JOGAR</button>
+            </ion-item>
         <button ion-button color="lightprimary" (click)="logout()">Sair</button>
     </ion-list>
 </ion-content>

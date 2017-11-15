@@ -11,32 +11,35 @@ import { RestProvider } from '../providers/rest/rest';
 import { HttpModule } from '@angular/http';
 import { Login } from '../pages/login/login';
 import { Signup } from '../pages/signup/signup';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
 
 @NgModule({
- declarations: [
- MyApp,
- Login,
- Signup,
- HomePage
- ],
- imports: [
- BrowserModule,  
- IonicModule.forRoot(MyApp),
- HttpModule
- 
- ],
- bootstrap: [IonicApp],
- entryComponents: [
- MyApp,
- Login,
- Signup,
- HomePage
- ],
- providers: [
- StatusBar,
- SplashScreen,
- {provide: ErrorHandler, useClass: IonicErrorHandler},
- RestProvider,
- ]
+    declarations: [
+        MyApp,
+        Login,
+        Signup,
+        HomePage
+    ],
+    imports: [
+        BrowserModule,
+        IonicModule.forRoot(MyApp),
+        HttpModule
+
+    ],
+    bootstrap: [IonicApp],
+    entryComponents: [
+        MyApp,
+        Login,
+        Signup,
+        HomePage
+    ],
+    providers: [
+        InAppBrowser,
+        StatusBar,
+        SplashScreen,
+        { provide: ErrorHandler, useClass: IonicErrorHandler },
+        RestProvider,
+    ]
 })
-export class AppModule {}
+export class AppModule { }
