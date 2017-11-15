@@ -5,8 +5,8 @@ import { RestProvider } from '../../providers/rest/rest';
 import { Login } from '../login/login';
 
 @Component({
- selector: 'page-home',
- templateUrl: 'home.html'
+    selector: 'page-home',
+    templateUrl: 'home.html'
 
 })
 export class HomePage {
@@ -15,20 +15,28 @@ export class HomePage {
 
     constructor(public navCtrl: NavController, public rest: RestProvider, public app: App) {
     }
-    
+
 
     ionViewDidLoad() {
         this.getJogadores();
     }
 
-    getJogadores() {    
+    getJogadores() {
         this.rest.getJogadores()
-        .subscribe(
-        Jogadores => this.Jogadores = Jogadores,
-        error => this.errorMessage = <any>error);
-     }
+            .subscribe(
+            Jogadores => this.Jogadores = Jogadores,
+            error => this.errorMessage = <any>error);
+    }
 
-    logout(){
+    logout() {
         this.navCtrl.setRoot(Login);
+    }
+
+    jogo_da_velha() {
+
+    }
+
+    t_rex() {
+
     }
 }

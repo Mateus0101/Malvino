@@ -1,21 +1,26 @@
 <ion-header>
- <ion-navbar>
-    <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-    </button>
-    <img class="navbarLogo" src="assets/imgs/logo1.1.png" />
- <ion-title>Home</ion-title>
- </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <img class="navbarLogo" src="assets/imgs/logo1.1.png" />
+        <ion-title>Home</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding id="home">
- <ion-list>
+    <!--<ion-list>
  <ion-item *ngFor="let j of Jogadores">
  <h2>Seja bem vindo {{j.nome}}</h2>
  <p>Email: {{j.email}}</p>
  <p>Login: {{j.login}}</p>
  </ion-item>
- </ion-list>
- <button ion-button color="lightprimary" (click)="logout()">Sair</button>
+ </ion-list>-->
+    <ion-list align="center">
+        <button img src="assets/img/img-icon.png" round ion-button color="lightprimary" (click)="jogo_da_velha()">Jogo da Velha</button>
+        <p></p>
+        <button round ion-button color="lightprimary" (click)="t_rex()">T-REX</button>
+        <p></p>
+        <button ion-button color="lightprimary" (click)="logout()">Sair</button>
+    </ion-list>
 </ion-content>
-
