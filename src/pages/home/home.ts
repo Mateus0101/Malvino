@@ -63,12 +63,12 @@ export class HomePage {
     }
 
     jogar_t_rex() {
-        const browser = this.theInAppBrowser.create('http://192.168.1.9:8080/Malvino/pages/T-Rex/index.html', '_self', "location=yes");
+        const browser = this.theInAppBrowser.create('http://localhost:8080/Malvino/pages/T-Rex/index.html', '_self', "location=yes");
         browser.show();
    }
 
    jogar_jogo_da_velha() {
-    const browser = this.theInAppBrowser.create('http://192.168.1.9:8080/Malvino/pages/JogoDaVelha/velha.html', '_self', "location=yes");
+    const browser = this.theInAppBrowser.create('http://localhost:8080/Malvino/pages/JogoDaVelha/velha.html', '_self', "location=yes");
     browser.show();
 }
 }
