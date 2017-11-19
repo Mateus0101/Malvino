@@ -1,17 +1,27 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { Login } from '../login/login';
+import { NavController, ToastController } from 'ionic-angular';
+import { RestProvider } from '../../providers/rest/rest';
 
 @Component({
   selector: 'page-redefinir-senha',
   templateUrl: 'redefinir-senha.html'
 })
 export class RedefinirSenha {
-
-  constructor(public navCtrl: NavController) {
+ 
+  email = {email:""};
+  
+  constructor(public navCtrl: NavController, 
+    public restProvider: RestProvider,  public toast: ToastController) {
+    }
+  
+  enviarEmail() {
+    this.restProvider.recuperarSenha(this.email)
+    .then((result:any)=>{
+      this.toast.create({ message: 'E-mail enviado com sucesso!', position: 'botton', duration: 3000 }).present();
+    })
+    .catch((error:any)=>{
+      this.toast.create({ message: 'Erro ao enviar email. Error: '+error.email, position: 'botton', duration: 3000 }).present();
+    })
   }
-  goToLogin(params){
-    if (!params) params = {};
-    this.navCtrl.push(Login);
-  }
+  
 }

@@ -12,6 +12,7 @@ import { HttpModule } from '@angular/http';
 import { Login } from '../pages/login/login';
 import { Signup } from '../pages/signup/signup';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { RedefinirSenha } from '../pages/redefinir-senha/redefinir-senha';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
         MyApp,
         Login,
         Signup,
-        HomePage
+        HomePage,
+        RedefinirSenha
     ],
     imports: [
         BrowserModule,
@@ -32,7 +34,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
         MyApp,
         Login,
         Signup,
-        HomePage
+        HomePage,
+        RedefinirSenha
     ],
     providers: [
         InAppBrowser,

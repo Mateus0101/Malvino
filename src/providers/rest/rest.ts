@@ -19,11 +19,33 @@ getJogadores(): Observable<string[]> {
     .catch(this.handleError);
 }
 
+recuperarSenha(email){
+    return new Promise((resolve, reject) => {
+        this.http.post(this.apiUrl + '/recuperarSenha',email)
+        .subscribe((result: any) => {
+            resolve(result.json());
+        },
+        (error) => {
+            reject(error.json());
+        });
+    }); 
+}
 
+logarJogador(data:any) {
+    return new Promise((resolve, reject) => {
+        this.http.post(this.apiUrl + '/login', data)
+        .subscribe((result: any) => {
+            resolve(result.json());
+        },
+        (error) => {
+            reject(error.json());
+        });
+    });
+}
 addJogador(data) {
     
     return new Promise((resolve, reject) => {
-      this.http.post(this.apiUrl+'/Salvar', data)
+        this.http.post(this.apiUrl+'/Salvar', data)
         .subscribe((result: any)=>{
             resolve(result.json())
         },
@@ -32,18 +54,6 @@ addJogador(data) {
         })
     });
 }
-
-logarJogador(data:any) {
-    return new Promise((resolve, reject) => {
-      this.http.post(this.apiUrl + '/login', data)
-        .subscribe((result: any) => {
-          resolve(result.json());
-        },
-        (error) => {
-          reject(error.json());
-        });
-    });
-  }
 
 
 private handleError (error: Response | any) {

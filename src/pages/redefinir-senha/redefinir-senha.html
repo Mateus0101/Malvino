@@ -1,34 +1,49 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>
-      Redefinir senha
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-<ion-content padding id="page9">
-  <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;">
-    <i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>
-  </div>
-  <div id="redefinirSenha-markdown7" class="show-list-numbers-and-dots">
-    <p style="color:#000000;">
-      Por não ter conseguido acessar sua conta, será enviada uma nova senha para o seu email!
-    </p>
-  </div>
-  <form id="redefinirSenha-form9">
-    <ion-item id="redefinirSenha-input8">
-      <ion-label>
-        Email:
-      </ion-label>
-      <ion-input type="text" placeholder="Digite seu email"></ion-input>
-    </ion-item>
-  </form>
-  <button id="redefinirSenha-button19" ion-button color="positive" block on-click="goToLogin()">
-    Enviar senha
-  </button>
-  <button id="redefinirSenha-button20" ion-button color="positive" block on-click="goToLogin()">
-    Cancelar
-  </button>
-</ion-content>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        Recuperar Senha
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding id="Recuperar">
+  
+    <div class="fixed">
+      <form>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+                <p style="color:#000000;">
+                    Por não ter conseguido acessar sua conta, será enviada uma nova senha para o seu email!
+                  </p>
+              <ion-list class="posicao-input">
+                <ion-item>
+                  <ion-label>
+                    E-mail
+                  </ion-label>
+                  <ion-input type="text" [(ngModel)]="email.email" name="email"></ion-input>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-list>
+  
+                <button ion-button color="positive" block style="color:#FFFFFF;border-radius:3px 3px 3px 3px;" (click)="enviarEmail()">
+                  Entrar
+                </button>
+                <br>
+               
+              </ion-list>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+    </div>
+  </ion-content>

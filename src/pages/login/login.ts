@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 import { RestProvider } from '../../providers/rest/rest';
 import { HomePage } from '../home/home';
 import { Signup } from '../signup/signup';
+import { RedefinirSenha } from '../redefinir-senha/redefinir-senha';
 
 @IonicPage()
 @Component({
@@ -34,6 +35,10 @@ export class Login {
   
   ionViewDidLoad(){
     console.log('ionViewDidLoad Login');
+  }
+
+  recuperarSenha(){
+    this.navCtrl.push(RedefinirSenha);
   }
 
   signup(){
