@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class RestProvider {
 //malvinoservice.hopto.org
- public apiUrl = 'http://localhost:8080/Malvino/rest/JogadoresService';
+ public apiUrl = 'http://malvinoservice.hopto.org:8080/Malvino/rest/JogadoresService';
 
 constructor(public http: Http) {}
 

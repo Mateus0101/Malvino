@@ -33,18 +33,6 @@ export class HomePage {
 
     constructor(private theInAppBrowser: InAppBrowser, public navCtrl: NavController, public rest: RestProvider, public app: App) {
     }
-    public openWithSystemBrowser(url: string) {
-        let target = "_system";
-        this.theInAppBrowser.create(url, target, this.options);
-    }
-    public openWithInAppBrowser(url: string) {
-        let target = "_blank";
-        this.theInAppBrowser.create(url, target, this.options);
-    }
-    public openWithCordovaBrowser(url: string) {
-        let target = "_self";
-        this.theInAppBrowser.create(url, target, this.options);
-    }
 
 
     ionViewDidLoad() {
@@ -63,12 +51,12 @@ export class HomePage {
     }
 
     jogar_t_rex() {
-        const browser = this.theInAppBrowser.create('http://localhost:8080/Malvino/pages/T-Rex/index.html', '_self', "location=yes");
+        const browser = this.theInAppBrowser.create('http://malvinoservice.hopto.org:8080/Malvino/pages/T-Rex/index.html', '_self', this.options);
         browser.show();
    }
 
    jogar_jogo_da_velha() {
-    const browser = this.theInAppBrowser.create('http://localhost:8080/Malvino/pages/JogoDaVelha/velha.html', '_self', "location=yes");
+    const browser = this.theInAppBrowser.create('http://malvinoservice.hopto.org:8080/Malvino/pages/JogoDaVelha/velha.html', '_self', this.options);
     browser.show();
 }
 }
