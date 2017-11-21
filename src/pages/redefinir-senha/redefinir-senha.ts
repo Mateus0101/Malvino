@@ -20,7 +20,7 @@ export class RedefinirSenha {
       this.toast.create({ message: 'E-mail enviado com sucesso!', position: 'botton', duration: 3000 }).present();
     })
     .catch((error:any)=>{
-      this.toast.create({ message: 'Erro ao enviar email. Error: '+error.email, position: 'botton', duration: 3000 }).present();
+      this.toast.create({ message: 'Erro ao enviar email. Error: '+error, position: 'botton', duration: 3000 }).present();
     })
   }
   

@@ -51,12 +51,12 @@ export class HomePage {
     }
 
     jogar_t_rex() {
-        const browser = this.theInAppBrowser.create('http://malvinoservice.hopto.org:8080/Malvino/pages/T-Rex/index.html', '_self', this.options);
+        const browser = this.theInAppBrowser.create('http://localhost:8080/Malvino/pages/T-Rex/index.html', '_self', this.options);
         browser.show();
    }
 
    jogar_jogo_da_velha() {
-    const browser = this.theInAppBrowser.create('http://malvinoservice.hopto.org:8080/Malvino/pages/JogoDaVelha/velha.html', '_self', this.options);
+    const browser = this.theInAppBrowser.create('http://localhost:8080/Malvino/pages/JogoDaVelha/velha.html', '_self', this.options);
     browser.show();
 }
 }

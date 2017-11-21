@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class RestProvider {
 //malvinoservice.hopto.org
- public apiUrl = 'http://malvinoservice.hopto.org:8080/Malvino/rest/JogadoresService';
+ public apiUrl = 'http://localhost:8080/Malvino/rest/JogadoresService';
 
 constructor(public http: Http) {}
 
@@ -23,10 +23,10 @@ recuperarSenha(email){
     return new Promise((resolve, reject) => {
         this.http.post(this.apiUrl + '/recuperarSenha',email)
         .subscribe((result: any) => {
-            resolve(result.json());
+            resolve(JSON.stringify(result));
         },
         (error) => {
-            reject(error.json());
+            reject(JSON.stringify(error));
         });
     }); 
 }
