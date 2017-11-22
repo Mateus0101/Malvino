@@ -6,13 +6,14 @@ import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser'
 
 @Component({
     selector: 'page-home',
-    templateUrl: 'home.html', 
+    templateUrl: 'home.html',
     providers: [InAppBrowser]
 
 })
 export class HomePage {
     Jogadores: string[];
     errorMessage: string;
+    idJogador = 12;
     options: InAppBrowserOptions = {
         location: 'yes',//Or 'no' 
         hidden: 'no', //Or  'yes'
@@ -51,13 +52,15 @@ export class HomePage {
     }
 
     jogar_t_rex() {
-        const browser = this.theInAppBrowser.create('http://localhost:8080/Malvino/pages/T-Rex/index.html', '_self', this.options);
+        var url = "http://localhost:8080/Malvino/pages/T-Rex/index.html?id="+this.idJogador;
+        const browser = this.theInAppBrowser.create(url, '_self', this.options);
         browser.show();
-   }
-
-   jogar_jogo_da_velha() {
-    const browser = this.theInAppBrowser.create('http://localhost:8080/Malvino/pages/JogoDaVelha/velha.html', '_self', this.options);
-    browser.show();
+    }
+    
+    jogar_jogo_da_velha() {
+        var url = "http://localhost:8080/Malvino/pages/JogoDaVelha/velha.html?id="+this.idJogador;
+        const browser = this.theInAppBrowser.create(url, '_self', this.options);
+        browser.show();
 }
 }
 

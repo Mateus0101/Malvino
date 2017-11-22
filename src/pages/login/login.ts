@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, MenuController } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
 import { HomePage } from '../home/home';
 import { Signup } from '../signup/signup';
@@ -19,8 +19,10 @@ export class Login {
   logar = { login: "", senha: "" };
   
   constructor(public navCtrl: NavController, public navParams: NavParams, 
-    public restProvider: RestProvider,  public toast: ToastController) {
-    }
+    public restProvider: RestProvider,  public toast: ToastController, public menuCtrl: MenuController
+  ) {
+    this.menuCtrl.enable(false, 'close');
+  }
   
   Logar() {
     this.restProvider.logarJogador(this.logar)
