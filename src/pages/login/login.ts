@@ -4,6 +4,7 @@ import { RestProvider } from '../../providers/rest/rest';
 import { HomePage } from '../home/home';
 import { Signup } from '../signup/signup';
 import { RedefinirSenha } from '../redefinir-senha/redefinir-senha';
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -18,7 +19,7 @@ export class Login {
   errorMessage: string;
   logar = { login: "", senha: "" };
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, 
+  constructor(private storage: Storage, public navCtrl: NavController, public navParams: NavParams, 
     public restProvider: RestProvider,  public toast: ToastController, public menuCtrl: MenuController
   ) {
     this.menuCtrl.enable(false, 'close');
@@ -27,6 +28,8 @@ export class Login {
   Logar() {
     this.restProvider.logarJogador(this.logar)
     .then((result:any)=>{
+      this.storage.set('id', result.idJogador);
+      
       this.navCtrl.setRoot(HomePage);
       this.toast.create({ message: 'Ususário logado com sucesso!', position: 'botton', duration: 3000 }).present();
     })

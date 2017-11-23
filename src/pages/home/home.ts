@@ -4,6 +4,8 @@ import { RestProvider } from '../../providers/rest/rest';
 import { Login } from '../login/login';
 import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser';
 
+import { Storage } from '@ionic/storage';
+
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html',
@@ -13,7 +15,6 @@ import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser'
 export class HomePage {
     Jogadores: string[];
     errorMessage: string;
-    idJogador = 12;
     options: InAppBrowserOptions = {
         location: 'yes',//Or 'no' 
         hidden: 'no', //Or  'yes'
@@ -32,8 +33,9 @@ export class HomePage {
         fullscreen: 'yes',//Windows only    
     };
 
-    constructor(private theInAppBrowser: InAppBrowser, public navCtrl: NavController, public rest: RestProvider, public app: App) {
+    constructor(private storage: Storage, private theInAppBrowser: InAppBrowser, public navCtrl: NavController, public rest: RestProvider, public app: App) {
     }
+
 
 
     ionViewDidLoad() {
@@ -51,14 +53,18 @@ export class HomePage {
         this.navCtrl.setRoot(Login);
     }
 
+    id = this.storage.get('id');
+    
+    
+
     jogar_t_rex() {
-        var url = "http://localhost:8080/Malvino/pages/T-Rex/index.html?id="+this.idJogador;
+        var url = "http://localhost:8080/Malvino/pages/T-Rex/index.html?id="+this.id;
         const browser = this.theInAppBrowser.create(url, '_self', this.options);
         browser.show();
     }
     
     jogar_jogo_da_velha() {
-        var url = "http://localhost:8080/Malvino/pages/JogoDaVelha/velha.html?id="+this.idJogador;
+        var url = "http://localhost:8080/Malvino/pages/JogoDaVelha/velha.html?id="+this.id;
         const browser = this.theInAppBrowser.create(url, '_self', this.options);
         browser.show();
 }

@@ -13,7 +13,7 @@ import { Login } from '../pages/login/login';
 import { Signup } from '../pages/signup/signup';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { RedefinirSenha } from '../pages/redefinir-senha/redefinir-senha';
-
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
     declarations: [
@@ -26,7 +26,8 @@ import { RedefinirSenha } from '../pages/redefinir-senha/redefinir-senha';
     imports: [
         BrowserModule,
         IonicModule.forRoot(MyApp),
-        HttpModule
+        HttpModule,
+        IonicStorageModule.forRoot()
 
     ],
     bootstrap: [IonicApp],
