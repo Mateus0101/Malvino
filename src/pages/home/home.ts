@@ -13,6 +13,7 @@ import { Storage } from '@ionic/storage';
 
 })
 export class HomePage {
+    id:string;
     Jogadores: string[];
     errorMessage: string;
     options: InAppBrowserOptions = {
@@ -33,7 +34,13 @@ export class HomePage {
         fullscreen: 'yes',//Windows only    
     };
 
-    constructor(private storage: Storage, private theInAppBrowser: InAppBrowser, public navCtrl: NavController, public rest: RestProvider, public app: App) {
+    constructor(private storage: Storage, private theInAppBrowser: InAppBrowser, 
+        public navCtrl: NavController, public rest: RestProvider, public app: App) {
+            
+            this.storage.get('id').then((data)=>{
+                console.log(data);
+                this.id = data;
+            })
     }
 
 
@@ -51,13 +58,20 @@ export class HomePage {
 
     logout() {
         this.navCtrl.setRoot(Login);
+        this.storage.clear();
     }
 
-    id = this.storage.get('id');
+    test() {
+        console.log(this.id);
+    }
+
+    
+   
     
     
 
     jogar_t_rex() {
+
         var url = "http://localhost:8080/Malvino/pages/T-Rex/index.html?id="+this.id;
         const browser = this.theInAppBrowser.create(url, '_self', this.options);
         browser.show();

@@ -13,8 +13,8 @@ import { Storage } from '@ionic/storage';
 })
 
 export class Login {
-
-  
+  valor:any;
+  teste:any;
   jogadoresTemp: string[];
   errorMessage: string;
   logar = { login: "", senha: "" };
@@ -24,12 +24,14 @@ export class Login {
   ) {
     this.menuCtrl.enable(false, 'close');
   }
-  
+
+
   Logar() {
     this.restProvider.logarJogador(this.logar)
     .then((result:any)=>{
-      this.storage.set('id', result.idJogador);
-      
+      var id = result.login;
+      this.storage.set('id', id);      
+
       this.navCtrl.setRoot(HomePage);
       this.toast.create({ message: 'Ususário logado com sucesso!', position: 'botton', duration: 3000 }).present();
     })
