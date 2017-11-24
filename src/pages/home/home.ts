@@ -54,19 +54,19 @@ export class HomePage {
     }
 
     id = this.storage.get('id');
-    
-    
+
+
 
     jogar_t_rex() {
-        var url = "http://localhost:8080/Malvino/pages/T-Rex/index.html?id="+this.id;
+        var url = "http://localhost:8080/Malvino/pages/T-Rex/index.html?id=" + this.id;
         const browser = this.theInAppBrowser.create(url, '_self', this.options);
         browser.show();
     }
-    
+
     jogar_jogo_da_velha() {
-        var url = "http://localhost:8080/Malvino/pages/JogoDaVelha/velha.html?id="+this.id;
+        var url = "http://localhost:8080/Malvino/pages/JogoDaVelha/velha.html?id=" + this.id;
         const browser = this.theInAppBrowser.create(url, '_self', this.options);
         browser.show();
-}
+    }
 }
 
