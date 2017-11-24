@@ -43,8 +43,6 @@ export class HomePage {
             })
     }
 
-
-
     ionViewDidLoad() {
         this.getJogadores();
     }
@@ -65,23 +63,8 @@ export class HomePage {
         console.log(this.id);
     }
 
-<<<<<<< HEAD
-    
-   
-    
-    
-
-    jogar_t_rex() {
-
-        var url = "http://localhost:8080/Malvino/pages/T-Rex/index.html?id="+this.id;
-=======
-    id = this.storage.get('id');
-
-
-
     jogar_t_rex() {
         var url = "http://localhost:8080/Malvino/pages/T-Rex/index.html?id=" + this.id;
->>>>>>> 573809d50847d863837ded64b91d467a1fd4f8b4
         const browser = this.theInAppBrowser.create(url, '_self', this.options);
         browser.show();
     }
