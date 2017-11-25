@@ -8,7 +8,7 @@ import { Clas } from '../pages/clas/cl-s';
 import { Amigos } from '../pages/amigos/amigos';
 import { ChatMalvino } from '../pages/chat-malvino/chat-malvino';
 import { Ranking } from '../pages/ranking/ranking';
-
+import { Storage } from '@ionic/storage';
 
 
 @Component({
@@ -21,7 +21,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(private storage: Storage,public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -45,11 +45,15 @@ export class MyApp {
       this.splashScreen.hide();
     });
   }
-
+  logout(){
+  this.storage.clear();
+  }
   openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
+
     this.nav.setRoot(page.component);
+    if (page.title === 'Encerrar sessão') {
+      this.logout();
+    }
   }
   
 }
