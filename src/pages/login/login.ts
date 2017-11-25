@@ -36,7 +36,7 @@ export class Login {
       this.toast.create({ message: 'Ususário logado com sucesso!', position: 'botton', duration: 3000 }).present();
     })
     .catch((error:any)=>{
-      this.toast.create({ message: 'Erro ao Logar. Error: '+error.login, position: 'botton', duration: 3000 }).present();
+      this.toast.create({ message: 'Erro ao Logar. Error: ', position: 'botton', duration: 3000 }).present();
     })
   }
   

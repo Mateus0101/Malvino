@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, App } from 'ionic-angular';
+import { NavController, App, MenuController } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
 import { Login } from '../login/login';
 import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser';
@@ -35,8 +35,10 @@ export class HomePage {
     };
 
     constructor(private storage: Storage, private theInAppBrowser: InAppBrowser, 
-        public navCtrl: NavController, public rest: RestProvider, public app: App) {
+        public navCtrl: NavController, public rest: RestProvider, public app: App, public menuCtrl: MenuController) {
             
+            this.menuCtrl.enable(true, 'close');
+
             this.storage.get('id').then((data)=>{
                 console.log(data);
                 this.id = data;
