@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Registrar</ion-title>
+    <ion-title>Cadastrar</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding id="Signup">
@@ -8,7 +8,7 @@
   <div class="fixed">
 
     <h1> Olá, bem vindo </h1>
-    <div class="text-div">Descubra o melhor do entretenimento</div>
+    <div class="text-div">Façã seu cadastro na Malvino - Game Suite</div>
 
     <form [formGroup]="todo" (ngSubmit)="cadastrar()">
 
@@ -34,6 +34,16 @@
 
       <ion-item>
         <ion-label floating>Senha</ion-label>
+        <ion-input type="password" formControlName="senha" [(ngModel)]="model.senha"></ion-input>
+      </ion-item>
+
+      <ion-item class="no-line error" *ngIf="!todo.controls.senha.valid  && (todo.controls.senha.dirty || submitAttempt) && !todo.controls.senha.pending">
+        <p *ngIf="todo.value.senha != ''" style="color: red;">Minimo de 8 caracteres!</p>
+        <p *ngIf="todo.value.senha == ''" style="color: red;">Campo Obrigatório!</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Confirmar Senha</ion-label>
         <ion-input type="password" formControlName="senha" [(ngModel)]="model.senha"></ion-input>
       </ion-item>
 

@@ -10,6 +10,7 @@ import { DetalhesDoCla } from '../detalhes-do-cla/detalhes-do-cl';
 import { CriarCla } from '../criar-cla/criar-cl';
 import { SolicitaEs } from '../solicita-es/solicita-es';
 import { Clas } from '../clas/cl-s';
+import { NovaConversaPage } from '../nova-conversa/nova-conversa';
 
 @Component({
   selector: 'page-chat-malvino',
@@ -19,35 +20,39 @@ export class ChatMalvino {
 
   constructor(public navCtrl: NavController) {
   }
-  goToConversaComJogador(params){
+  goToConversaComJogador(params) {
     if (!params) params = {};
     this.navCtrl.push(ConversaComJogador);
-  }goToMeusDados(params){
+  } goToMeusDados(params) {
     if (!params) params = {};
     this.navCtrl.push(MeusDados);
-  }goToHome(params){
+  } goToHome(params) {
     if (!params) params = {};
     this.navCtrl.push(HomePage);
-  }goToEditarMeusDados(params){
+  } goToEditarMeusDados(params) {
     if (!params) params = {};
     this.navCtrl.push(EditarMeusDados);
-  }goToImagemDoPerfil(params){
+  } goToImagemDoPerfil(params) {
     if (!params) params = {};
     this.navCtrl.push(ImagemDoPerfil);
-  }goToConversaEmCl(params){
+  } goToConversaEmCl(params) {
     if (!params) params = {};
     this.navCtrl.push(ConversaEmCla);
-  }goToDetalhesDoCl(params){
+  } goToDetalhesDoCl(params) {
     if (!params) params = {};
     this.navCtrl.push(DetalhesDoCla);
-  }goToClS(params){
+  } goToClS(params) {
     if (!params) params = {};
     this.navCtrl.push(Clas);
-  }goToCriarCl(params){
+  } goToCriarCl(params) {
     if (!params) params = {};
     this.navCtrl.push(CriarCla);
-  }goToSolicitaEs(params){
+  } goToSolicitaEs(params) {
     if (!params) params = {};
     this.navCtrl.push(SolicitaEs);
+  }
+  goToNovaConversaPage(params) {
+    if (!params) params = {};
+    this.navCtrl.push(NovaConversaPage);
   }
 }

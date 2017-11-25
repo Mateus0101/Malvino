@@ -13,9 +13,11 @@ import { Storage } from '@ionic/storage';
 
 })
 export class HomePage {
-    id:string;
+    id: string;
     Jogadores: string[];
     errorMessage: string;
+    searchQuery: string = '';
+    jogos: string[];
     options: InAppBrowserOptions = {
         location: 'yes',//Or 'no' 
         hidden: 'no', //Or  'yes'
@@ -34,15 +36,39 @@ export class HomePage {
         fullscreen: 'yes',//Windows only    
     };
 
-    constructor(private storage: Storage, private theInAppBrowser: InAppBrowser, 
+    constructor(private storage: Storage, private theInAppBrowser: InAppBrowser,
         public navCtrl: NavController, public rest: RestProvider, public app: App, public menuCtrl: MenuController) {
-            
-            this.menuCtrl.enable(true, 'close');
 
-            this.storage.get('id').then((data)=>{
-                console.log(data);
-                this.id = data;
+        this.menuCtrl.enable(true, 'close');
+
+        this.storage.get('id').then((data) => {
+            console.log(data);
+            this.id = data;
+        })
+
+        this.initializeJogos();
+    }
+
+    initializeJogos() {
+        this.jogos = [
+            'T-REX',
+            'JOGO DA VELHA'
+        ];
+    }
+
+    getJogos(ev: any) {
+        // Repor itens de volta para todos os itens
+        this.initializeJogos();
+
+        // ajuste val para o valor da barra de pesquisa
+        let val = ev.target.value;
+
+        // se o valor for uma string vazia, não filtre os itens
+        if (val && val.trim() != '') {
+            this.jogos = this.jogos.filter((jogo) => {
+                return (jogo.toLowerCase().indexOf(val.toLowerCase()) > -1);
             })
+        }
     }
 
     ionViewDidLoad() {

@@ -22,7 +22,7 @@ export class Login {
   constructor(private storage: Storage, public navCtrl: NavController, public navParams: NavParams, 
     public restProvider: RestProvider,  public toast: ToastController, public menuCtrl: MenuController
   ) {
-    this.menuCtrl.enable(false, 'close');
+    //this.menuCtrl.enable(false, 'close');
   }
 
 
