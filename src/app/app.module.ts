@@ -14,6 +14,23 @@ import { Signup } from '../pages/signup/signup';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { RedefinirSenha } from '../pages/redefinir-senha/redefinir-senha';
 import { IonicStorageModule } from '@ionic/storage';
+import { ChatMalvino } from '../pages/chat-malvino/chat-malvino';
+import { Clas } from '../pages/clas/cl-s';
+import { CriarCla } from '../pages/criar-cla/criar-cl';
+import { ConversaComJogador } from '../pages/conversa-com-jogador/conversa-com-jogador';
+import { ConversaEmCla } from '../pages/conversa-em-cla/conversa-em-cl';
+import { DetalhesDoCla } from '../pages/detalhes-do-cla/detalhes-do-cl';
+import { EditarMeusDados } from '../pages/editar-meus-dados/editar-meus-dados';
+import { ImagemDoClPage } from '../pages/imagem-do-cla/imagem-do-cl';
+import { ImagemDoPerfil } from '../pages/imagem-do-perfil/imagem-do-perfil';
+import { MeusDados } from '../pages/meus-dados/meus-dados';
+import { NovaConversaPage } from '../pages/nova-conversa/nova-conversa';
+import { PessoasPage } from '../pages/pessoas/pessoas';
+import { Ranking } from '../pages/ranking/ranking';
+import { RankingGlobal } from '../pages/ranking-global/ranking-global';
+import { RankingPorCla } from '../pages/ranking-por-cla/ranking-por-cl';
+import { RankingPorParticipantesDoCla } from '../pages/ranking-por-participantes-do-cla/ranking-por-participantes-do-cl';
+import { SolicitaEs } from '../pages/solicita-es/solicita-es';
 
 @NgModule({
     declarations: [
@@ -21,7 +38,25 @@ import { IonicStorageModule } from '@ionic/storage';
         Login,
         Signup,
         HomePage,
-        RedefinirSenha
+        RedefinirSenha,
+        Clas,
+        ChatMalvino,
+        CriarCla,
+        ConversaComJogador,
+        ConversaEmCla,
+        DetalhesDoCla,
+        EditarMeusDados,
+        ImagemDoClPage,
+        ImagemDoPerfil,
+        MeusDados,
+        NovaConversaPage,
+        PessoasPage,
+        Ranking,
+        RankingGlobal,
+        RankingPorCla,
+        RankingPorParticipantesDoCla,
+        SolicitaEs
+
     ],
     imports: [
         BrowserModule,
@@ -39,7 +74,24 @@ import { IonicStorageModule } from '@ionic/storage';
         Login,
         Signup,
         HomePage,
-        RedefinirSenha
+        RedefinirSenha,
+        Clas,
+        ChatMalvino,
+        CriarCla,
+        ConversaComJogador,
+        ConversaEmCla,
+        DetalhesDoCla,
+        EditarMeusDados,
+        ImagemDoClPage,
+        ImagemDoPerfil,
+        MeusDados,
+        NovaConversaPage,
+        PessoasPage,
+        Ranking,
+        RankingGlobal,
+        RankingPorCla,
+        RankingPorParticipantesDoCla,
+        SolicitaEs
     ],
     providers: [
         InAppBrowser,
