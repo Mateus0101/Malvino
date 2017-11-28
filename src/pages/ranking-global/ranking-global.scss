@@ -1,9 +1,8 @@
 page-ranking-global {
 
     table {
-        border: 2px solid black;
         border-collapse: collapse;
-        width: 100%;
+        margin: 10px auto;
     }
     
     th, td {
@@ -12,12 +11,21 @@ page-ranking-global {
     }
     
     tr:nth-child(even){
-        background-color: #A9A9A9;
+        background-color: rgb(221, 216, 216);
     }
     
     th {
-        background-color: #483D8B;
+        text-align: center;
+        background-color: #242443;
         color: white;
     }
 
+    .divTabela{
+        border: 1px solid;
+        border-radius: 15px 50px;
+        width: 100%;
+        height: 100%;
+        background-color: #acacd3;
+        opacity: 1.9;
+    }
 }

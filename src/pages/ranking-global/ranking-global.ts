@@ -27,7 +27,7 @@ export class RankingGlobal {
   presentLoading() {
     let loader = this.loadingCtrl.create({
       content: "CARREGANDO...",
-      duration: 4000
+      duration: 5000
     });
     loader.present();
   }

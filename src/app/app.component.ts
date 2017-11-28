@@ -9,7 +9,8 @@ import { Amigos } from '../pages/amigos/amigos';
 import { ChatMalvino } from '../pages/chat-malvino/chat-malvino';
 import { Ranking } from '../pages/ranking/ranking';
 import { Storage } from '@ionic/storage';
-import { RankingGlobal } from '../pages/ranking-global/ranking-global';
+import { ModalController } from 'ionic-angular/components/modal/modal-controller';
+import { SplashPage } from '../pages/splash/splash';
 
 
 @Component({
@@ -18,13 +19,18 @@ import { RankingGlobal } from '../pages/ranking-global/ranking-global';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = RankingGlobal;
+  rootPage: any = Login;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(private storage: Storage,public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(private storage: Storage,public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, modalCtrl: ModalController) {
     this.initializeApp();
 
+    platform.ready().then(() => {
+      statusBar.styleDefault();
+      let splash = modalCtrl.create(SplashPage);
+      splash.present();
+    });
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Visualizar tela inicial', component: HomePage },
@@ -43,7 +49,7 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      // this.splashScreen.hide(); // Oculta Splash Screen.
     });
   }
   logout(){

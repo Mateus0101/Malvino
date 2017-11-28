@@ -4,75 +4,67 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="Signup">
-
   <div class="fixed">
-
-    <h1> Olá, bem vindo </h1>
-    <div class="text-div">Façã seu cadastro na Malvino - Game Suite</div>
-
     <form [formGroup]="todo" (ngSubmit)="cadastrar()">
-
-      <ion-item>
-        <ion-label floating>Nome Completo</ion-label>
-        <ion-input type="text" formControlName="nome" [(ngModel)]="model.nome"></ion-input>
-      </ion-item>
-
-      <ion-item class="no-line error" *ngIf="!todo.controls.nome.valid  && (todo.controls.nome.dirty || submitAttempt) && !todo.controls.nome.pending">
-        <p *ngIf="todo.value.nome != ''" style="color: red;">Somente Letras!</p>
-        <p *ngIf="todo.value.nome == ''" style="color: red;">Campo Obrigatório!</p>
-      </ion-item>
-
-      <ion-item>
-        <ion-label floating>Login</ion-label>
-        <ion-input type="text" formControlName="login" [(ngModel)]="model.login"></ion-input>
-      </ion-item>
-
-      <ion-item class="no-line error" *ngIf="!todo.controls.login.valid  && (todo.controls.login.dirty || submitAttempt) && !todo.controls.login.pending">
-        <p *ngIf="todo.value.login != ''" style="color: red;">Somente Letras!</p>
-        <p *ngIf="todo.value.login == ''" style="color: red;">Campo Obrigatório!</p>
-      </ion-item>
-
-      <ion-item>
-        <ion-label floating>Senha</ion-label>
-        <ion-input type="password" formControlName="senha" [(ngModel)]="model.senha"></ion-input>
-      </ion-item>
-
-      <ion-item class="no-line error" *ngIf="!todo.controls.senha.valid  && (todo.controls.senha.dirty || submitAttempt) && !todo.controls.senha.pending">
-        <p *ngIf="todo.value.senha != ''" style="color: red;">Minimo de 8 caracteres!</p>
-        <p *ngIf="todo.value.senha == ''" style="color: red;">Campo Obrigatório!</p>
-      </ion-item>
-
-      <ion-item>
-        <ion-label floating>Confirmar Senha</ion-label>
-        <ion-input type="password" formControlName="senha" [(ngModel)]="model.senha"></ion-input>
-      </ion-item>
-
-      <ion-item class="no-line error" *ngIf="!todo.controls.senha.valid  && (todo.controls.senha.dirty || submitAttempt) && !todo.controls.senha.pending">
-        <p *ngIf="todo.value.senha != ''" style="color: red;">Minimo de 8 caracteres!</p>
-        <p *ngIf="todo.value.senha == ''" style="color: red;">Campo Obrigatório!</p>
-      </ion-item>
-
-      <ion-item>
-        <ion-label floating>E-mail</ion-label>
-        <ion-input type="text" formControlName="email" [(ngModel)]="model.email"></ion-input>
-      </ion-item>
-
-      <ion-item class="no-line error" *ngIf="!todo.controls.email.valid  && (todo.controls.email.dirty || submitAttempt) && !todo.controls.email.pending">
-        <p *ngIf="todo.value.email != ''" style="color: red;">E-mail inválido!</p>
-        <p *ngIf="todo.value.email == ''" style="color: red;">Campo Obrigatório!</p>
-      </ion-item>
-
-      <ion-item>
-        <ion-label floating>Genero</ion-label>
-        <ion-input type="text" formControlName="genero" [(ngModel)]="model.genero"></ion-input>
-      </ion-item>
-
-      <ion-item class="no-line error" *ngIf="!todo.controls.genero.valid  && (todo.controls.genero.dirty || submitAttempt) && !todo.controls.genero.pending">
-        <p *ngIf="todo.value.genero != ''" style="color: red;">Somente Letras!</p>
-        <p *ngIf="todo.value.genero == ''" style="color: red;">Campo Obrigatório!</p>
-      </ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-list class="posicao-input">
+              <ion-item>
+                <ion-label floating>Nome Completo</ion-label>
+                <ion-input type="text" formControlName="nome" [(ngModel)]="model.nome"></ion-input>
+              </ion-item>
+              <ion-item class="no-line error" *ngIf="!todo.controls.nome.valid  && (todo.controls.nome.dirty || submitAttempt) && !todo.controls.nome.pending">
+                <p *ngIf="todo.value.nome != ''" style="color: red;">Somente Letras!</p>
+                <p *ngIf="todo.value.nome == ''" style="color: red;">Campo Obrigatório!</p>
+              </ion-item>
+              <ion-item>
+                <ion-label floating>Login</ion-label>
+                <ion-input type="text" formControlName="login" [(ngModel)]="model.login"></ion-input>
+              </ion-item>
+              <ion-item class="no-line error" *ngIf="!todo.controls.login.valid  && (todo.controls.login.dirty || submitAttempt) && !todo.controls.login.pending">
+                <p *ngIf="todo.value.login != ''" style="color: red;">Somente Letras!</p>
+                <p *ngIf="todo.value.login == ''" style="color: red;">Campo Obrigatório!</p>
+              </ion-item>
+              <ion-item>
+                <ion-label floating>Senha</ion-label>
+                <ion-input type="password" formControlName="senha" [(ngModel)]="model.senha"></ion-input>
+              </ion-item>
+              <ion-item class="no-line error" *ngIf="!todo.controls.senha.valid  && (todo.controls.senha.dirty || submitAttempt) && !todo.controls.senha.pending">
+                <p *ngIf="todo.value.senha != ''" style="color: red;">Minimo de 8 caracteres!</p>
+                <p *ngIf="todo.value.senha == ''" style="color: red;">Campo Obrigatório!</p>
+              </ion-item>
+              <ion-item>
+                <ion-label floating>Confirmar Senha</ion-label>
+                <ion-input type="password" formControlName="confirmarSenha" [(ngModel)]="model.confirmarSenha"></ion-input>
+              </ion-item>
+              <ion-item class="no-line error" *ngIf="!todo.controls.confirmarSenha.valid  && (todo.controls.confirmarSenha.dirty || submitAttempt) && !todo.controls.confirmarSenha.pending">
+                <p *ngIf="todo.value.confirmarSenha != ''" style="color: red;">Minimo de 8 caracteres!</p>
+                <p *ngIf="todo.value.confirmarSenha == ''" style="color: red;">Campo Obrigatório!</p>
+                <p *ngIf="todo.value.confirmarSenha != 'senha'" style="color: red;">As senhas não conferem!</p>
+              </ion-item>
+              <ion-item>
+                <ion-label floating>E-mail</ion-label>
+                <ion-input type="text" formControlName="email" [(ngModel)]="model.email"></ion-input>
+              </ion-item>
+              <ion-item class="no-line error" *ngIf="!todo.controls.email.valid  && (todo.controls.email.dirty || submitAttempt) && !todo.controls.email.pending">
+                <p *ngIf="todo.value.email != ''" style="color: red;">E-mail inválido!</p>
+                <p *ngIf="todo.value.email == ''" style="color: red;">Campo Obrigatório!</p>
+              </ion-item>
+              <ion-item>
+                <ion-label floating>Gênero</ion-label>
+                <ion-input type="text" formControlName="genero" [(ngModel)]="model.genero"></ion-input>
+              </ion-item>
+              <ion-item class="no-line error" *ngIf="!todo.controls.genero.valid  && (todo.controls.genero.dirty || submitAttempt) && !todo.controls.genero.pending">
+                <p *ngIf="todo.value.genero != ''" style="color: red;">Somente Letras!</p>
+                <p *ngIf="todo.value.genero == ''" style="color: red;">Campo Obrigatório!</p>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </form>
-
-    <button ion-button color="positive" block style="color:#FFFFFF;border-radius:3px 3px 3px 3px;" type="submit" [disabled]="!todo.valid" (click)="Salvar()">Cadastrar</button>
+    <button ion-button color="positive" block style="color:#FFFFFF;border-radius:3px 3px 3px 3px;" type="submit" [disabled]="!todo.valid"
+      (click)="Salvar()">Cadastrar</button>
   </div>
 </ion-content>

@@ -32,9 +32,11 @@ import { RankingPorCla } from '../pages/ranking-por-cla/ranking-por-cl';
 import { RankingPorParticipantesDoCla } from '../pages/ranking-por-participantes-do-cla/ranking-por-participantes-do-cl';
 import { SolicitaEs } from '../pages/solicita-es/solicita-es';
 import { Amigos } from '../pages/amigos/amigos';
+import { SplashPage } from '../pages/splash/splash';
 
 @NgModule({
     declarations: [
+        SplashPage,
         MyApp,
         Login,
         Signup,
@@ -72,6 +74,7 @@ import { Amigos } from '../pages/amigos/amigos';
     ],
     bootstrap: [IonicApp],
     entryComponents: [
+        SplashPage,
         MyApp,
         Login,
         Signup,

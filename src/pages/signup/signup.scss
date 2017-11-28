@@ -1,11 +1,20 @@
 page-signup {
     #Signup{
         background: color($colors, welcome-bkg);
+        background-image: url("/assets/imgs/logo1.2.png");
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: 150px;
+        margin-top: 60px;
 
-        h1{
-            font-size: 30px;
+        .h1{
+            font-size: 40px;
             margin-top: 10px;
             text-align: center;
+        }
+
+        .posicao-input{
+            margin-top: 0px;
         }
 
         .text-div{
@@ -14,7 +23,7 @@ page-signup {
 
         div.fixed { 
             position: fixed; 
-            top: 10px; 
+            top: 100px; 
             left: 0; 
             width:100%;
             height:100%;
@@ -22,9 +31,11 @@ page-signup {
 
         ion-col{
             text-align: center;
-        } 
+        }
+
+        .btLogin {
+            width: 290px;
+        }
     }
 }
-.btLogin {
-    width: 290px;
-  }
+

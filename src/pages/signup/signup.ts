@@ -29,8 +29,9 @@ export class Signup {
       nome: [null, [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
       login: [null, [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
       senha: [null, [Validators.required, Validators.minLength(8)]],
+      confirmarSenha: [null, [Validators.required, Validators.minLength(8)]],
       email: [null, [Validators.required, Validators.email]],
-      genero: [null, [Validators.required]]      
+      genero: [null, [Validators.required]]    
     });
 
   }

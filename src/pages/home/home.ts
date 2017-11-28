@@ -19,6 +19,8 @@ export class HomePage {
     searchQuery: string = '';
     jogos1: string[];
     jogos2: string[];
+    arcade: string[];
+    estrategia: string[];
     options: InAppBrowserOptions = {
         location: 'yes',//Or 'no' 
         hidden: 'no', //Or  'yes'
@@ -48,6 +50,7 @@ export class HomePage {
         })
 
         this.initializeJogos();
+        this.initializeCategorias();
     }
 
     initializeJogos() {
@@ -56,6 +59,15 @@ export class HomePage {
         ];
         this.jogos2 = [
             'JOGO DA VELHA'
+        ];
+    }
+
+    initializeCategorias() {
+        this.arcade = [
+            'Arcade',
+        ];
+        this.estrategia = [
+            'Estratégia'
         ];
     }
 
@@ -73,6 +85,24 @@ export class HomePage {
             })
             this.jogos2 = this.jogos2.filter((jogo) => {
                 return (jogo.toLowerCase().indexOf(val.toLowerCase()) > -1);
+            })
+        }
+    }
+
+    getCategorias(ev: any) {
+        // Repor itens de volta para todos os itens
+        this.initializeCategorias();
+
+        // ajuste val para o valor da barra de pesquisa
+        let val = ev.target.value;
+
+        // se o valor for uma string vazia, não filtre os itens
+        if (val && val.trim() != '') {
+            this.arcade = this.arcade.filter((categoria) => {
+                return (categoria.toLowerCase().indexOf(val.toLowerCase()) > -1);
+            })
+            this.estrategia = this.estrategia.filter((categoria) => {
+                return (categoria.toLowerCase().indexOf(val.toLowerCase()) > -1);
             })
         }
     }

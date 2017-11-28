@@ -25,7 +25,6 @@ export class Login {
     //this.menuCtrl.enable(false, 'close');
   }
 
-
   Logar() {
     this.restProvider.logarJogador(this.logar)
     .then((result:any)=>{
