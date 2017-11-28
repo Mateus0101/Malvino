@@ -14,7 +14,7 @@ export class RankingPorParticipantesDoCla {
   }
   goToRanking(params){
     if (!params) params = {};
-    this.navCtrl.push(Ranking);
+    this.navCtrl.setRoot(Ranking);
   }goToRankingPorCl(params){
     if (!params) params = {};
     this.navCtrl.push(RankingPorCla);

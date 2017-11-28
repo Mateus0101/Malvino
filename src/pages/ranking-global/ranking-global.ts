@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, LoadingController } from 'ionic-angular';
 import { Ranking } from '../ranking/ranking';
 import { RankingPorCla } from '../ranking-por-cla/ranking-por-cl';
 import { RankingPorParticipantesDoCla } from '../ranking-por-participantes-do-cla/ranking-por-participantes-do-cl';
+import { RestProvider } from '../../providers/rest/rest';
 
 @Component({
   selector: 'page-ranking-global',
@@ -10,18 +11,47 @@ import { RankingPorParticipantesDoCla } from '../ranking-por-participantes-do-cl
 })
 export class RankingGlobal {
 
-  constructor(public navCtrl: NavController) {
+  Ranking: string[];
+  errorMessage: string;
+
+  constructor(public navCtrl: NavController, public rest: RestProvider, public loadingCtrl: LoadingController) {
+
+      this.rest.getRanking()
+        .subscribe(
+        Ranking => this.Ranking = Ranking,
+        error => this.errorMessage = <any>error);
+        this.presentLoading();
+
   }
-  goToRanking(params){
+
+  presentLoading() {
+    let loader = this.loadingCtrl.create({
+      content: "CARREGANDO...",
+      duration: 4000
+    });
+    loader.present();
+  }
+
+  ionViewDidLoad() {
+   
+  }
+
+  goToRanking(params) {
     if (!params) params = {};
-    this.navCtrl.push(Ranking);
-  }goToRankingPorCl(params){
+    this.navCtrl.setRoot(Ranking);
+  }
+
+  goToRankingPorCl(params) {
     if (!params) params = {};
     this.navCtrl.push(RankingPorCla);
-  }goToRankingPorParticipantesDoCl(params){
+  }
+
+  goToRankingPorParticipantesDoCl(params) {
     if (!params) params = {};
     this.navCtrl.push(RankingPorParticipantesDoCla);
-  }goToRankingGlobal(params){
+  }
+
+  goToRankingGlobal(params) {
     if (!params) params = {};
     this.navCtrl.push(RankingGlobal);
   }

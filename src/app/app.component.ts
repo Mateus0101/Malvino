@@ -9,6 +9,7 @@ import { Amigos } from '../pages/amigos/amigos';
 import { ChatMalvino } from '../pages/chat-malvino/chat-malvino';
 import { Ranking } from '../pages/ranking/ranking';
 import { Storage } from '@ionic/storage';
+import { RankingGlobal } from '../pages/ranking-global/ranking-global';
 
 
 @Component({
@@ -17,7 +18,7 @@ import { Storage } from '@ionic/storage';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = RankingGlobal;
 
   pages: Array<{title: string, component: any}>;
 

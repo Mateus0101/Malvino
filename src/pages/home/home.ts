@@ -17,7 +17,8 @@ export class HomePage {
     Jogadores: string[];
     errorMessage: string;
     searchQuery: string = '';
-    jogos: string[];
+    jogos1: string[];
+    jogos2: string[];
     options: InAppBrowserOptions = {
         location: 'yes',//Or 'no' 
         hidden: 'no', //Or  'yes'
@@ -50,8 +51,10 @@ export class HomePage {
     }
 
     initializeJogos() {
-        this.jogos = [
+        this.jogos1 = [
             'T-REX',
+        ];
+        this.jogos2 = [
             'JOGO DA VELHA'
         ];
     }
@@ -65,21 +68,16 @@ export class HomePage {
 
         // se o valor for uma string vazia, não filtre os itens
         if (val && val.trim() != '') {
-            this.jogos = this.jogos.filter((jogo) => {
+            this.jogos1 = this.jogos1.filter((jogo) => {
+                return (jogo.toLowerCase().indexOf(val.toLowerCase()) > -1);
+            })
+            this.jogos2 = this.jogos2.filter((jogo) => {
                 return (jogo.toLowerCase().indexOf(val.toLowerCase()) > -1);
             })
         }
     }
 
     ionViewDidLoad() {
-        this.getJogadores();
-    }
-
-    getJogadores() {
-        this.rest.getJogadores()
-            .subscribe(
-            Jogadores => this.Jogadores = Jogadores,
-            error => this.errorMessage = <any>error);
     }
 
     logout() {
@@ -92,13 +90,13 @@ export class HomePage {
     }
 
     jogar_t_rex() {
-        var url = "http://localhost:8080/Malvino/pages/T-Rex/index.html?id=" + this.id;
+        var url = "http://192.168.1.12:8080/Malvino/pages/T-Rex/index.html?id=" + this.id;
         const browser = this.theInAppBrowser.create(url, '_self', this.options);
         browser.show();
     }
 
     jogar_jogo_da_velha() {
-        var url = "http://localhost:8080/Malvino/pages/JogoDaVelha/velha.html?id=" + this.id;
+        var url = "http://192.168.1.12:8080/Malvino/pages/JogoDaVelha/velha.html?id=" + this.id;
         const browser = this.theInAppBrowser.create(url, '_self', this.options);
         browser.show();
     }

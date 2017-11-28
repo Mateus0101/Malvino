@@ -12,16 +12,23 @@ export class Ranking {
 
   constructor(public navCtrl: NavController) {
   }
+
   goToRankingPorCl(params){
     if (!params) params = {};
     this.navCtrl.push(RankingPorCla);
-  }goToRanking(params){
+  }
+  
+  goToRanking(params){
     if (!params) params = {};
     this.navCtrl.push(Ranking);
-  }goToRankingPorParticipantesDoCl(params){
+  }
+  
+  goToRankingPorParticipantesDoCl(params){
     if (!params) params = {};
     this.navCtrl.push(RankingPorParticipantesDoCla);
-  }goToRankingGlobal(params){
+  }
+  
+  goToRankingGlobal(params){
     if (!params) params = {};
     this.navCtrl.push(RankingGlobal);
   }

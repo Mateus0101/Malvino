@@ -13,27 +13,26 @@
         <ion-item>
             <ion-label>Categoria</ion-label>
             <ion-select [(ngModel)]="categoria">
-                <ion-option value="ação">AÇÃO</ion-option>
-                <ion-option value="aventura">AVENTURA</ion-option>
-                <ion-option value="tiro">TIRO</ion-option>
+                <ion-option value="Arcade">Arcade</ion-option>
+                <ion-option value="Estratégia">Estratégia</ion-option>
             </ion-select>
         </ion-item>
     </ion-list>
     <ion-list align="center">
-        <ion-item *ngFor="let jogo of jogos">
+        <ion-item *ngFor="let jogo of jogos1">
             {{ jogo }}
             <ion-thumbnail item-start>
                 <img src="assets/imgs/T-REX.jpg">
             </ion-thumbnail>
-            <p>Descrição</p>
+            <p>Acarde</p>
             <button round item-end ion-button color="lightprimary" (click)="jogar_t_rex()">JOGAR</button>
         </ion-item>
-        <ion-item *ngFor="let jogo of jogos">
+        <ion-item *ngFor="let jogo of jogos2">
             {{ jogo }}
             <ion-thumbnail item-start>
                 <img src="assets/imgs/jogo_da_velha.jpg">
             </ion-thumbnail>
-            <p>Descrição</p>
+            <p>Estratégia</p>
             <button round item-end ion-button color="lightprimary" (click)="jogar_jogo_da_velha()">JOGAR</button>
         </ion-item>
     </ion-list>

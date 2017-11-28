@@ -1,3 +1,23 @@
 page-ranking-global {
 
+    table {
+        border: 2px solid black;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+    
+    tr:nth-child(even){
+        background-color: #A9A9A9;
+    }
+    
+    th {
+        background-color: #483D8B;
+        color: white;
+    }
+
 }
