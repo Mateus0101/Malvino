@@ -41,7 +41,7 @@
               <ion-item class="no-line error" *ngIf="!todo.controls.confirmarSenha.valid  && (todo.controls.confirmarSenha.dirty || submitAttempt) && !todo.controls.confirmarSenha.pending">
                 <p *ngIf="todo.value.confirmarSenha != ''" style="color: red;">Minimo de 8 caracteres!</p>
                 <p *ngIf="todo.value.confirmarSenha == ''" style="color: red;">Campo Obrigatório!</p>
-                <p *ngIf="todo.value.confirmarSenha != 'senha'" style="color: red;">As senhas não conferem!</p>
+                <p *ngIf="todo.value.confirmarSenha != ''" style="color: red;">As senhas não conferem!</p>
               </ion-item>
               <ion-item>
                 <ion-label floating>E-mail</ion-label>

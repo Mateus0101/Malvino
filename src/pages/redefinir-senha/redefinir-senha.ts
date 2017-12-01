@@ -17,10 +17,10 @@ export class RedefinirSenha {
   enviarEmail() {
     this.restProvider.recuperarSenha(this.email)
     .then((result:any)=>{
-      this.toast.create({ message: 'E-mail enviado com sucesso!', position: 'botton', duration: 3000 }).present();
+      this.toast.create({ message: 'Email enviado com sucesso!', position: 'botton', duration: 3000 }).present();
     })
     .catch((error:any)=>{
-      this.toast.create({ message: 'Erro ao enviar email. Error: '+error, position: 'botton', duration: 3000 }).present();
+      this.toast.create({ message: 'Email não encontrado!', position: 'botton', duration: 3000 }).present();
     })
   }
   

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Perfil do Jogador</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="fixed">
+    <form (ngSubmit)="cadastrar()">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-list class="posicao-input">
+              <ion-item>
+                <ion-label floating>Nome Completo</ion-label>
+                <ion-input type="text" [(ngModel)]="model.nome" name="nome"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label floating>Login</ion-label>
+                <ion-input [disabled]="true" type="text" [(ngModel)]="model.login" name="login"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label floating>Senha</ion-label>
+                <ion-input type="password" [(ngModel)]="model.senha" name="senha"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label floating>Confirmar Senha</ion-label>
+                <ion-input type="password" [(ngModel)]="model.confirmarSenha" name="confirmarSenha"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label floating>E-mail</ion-label>
+                <ion-input type="text" [(ngModel)]="model.email" name="email"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label floating>Gênero</ion-label>
+                <ion-input type="text" [(ngModel)]="model.genero" name="genero"></ion-input>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+    <button ion-button color="positive" block style="color:#FFFFFF;border-radius:3px 3px 3px 3px;" type="submit" (click)="editarPerfil()">Salvar</button>
+  </div>
+</ion-content>

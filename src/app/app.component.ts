@@ -11,6 +11,7 @@ import { Ranking } from '../pages/ranking/ranking';
 import { Storage } from '@ionic/storage';
 import { ModalController } from 'ionic-angular/components/modal/modal-controller';
 import { SplashPage } from '../pages/splash/splash';
+import { PerfilJogadorPage } from '../pages/perfil-jogador/perfil-jogador';
 
 
 @Component({
@@ -61,6 +62,10 @@ export class MyApp {
     if (page.title === 'Encerrar sessão') {
       this.logout();
     }
+  }
+
+  openPagePerfil(){
+    this.nav.setRoot(PerfilJogadorPage);
   }
   
 }

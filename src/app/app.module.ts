@@ -33,6 +33,7 @@ import { RankingPorParticipantesDoCla } from '../pages/ranking-por-participantes
 import { SolicitaEs } from '../pages/solicita-es/solicita-es';
 import { Amigos } from '../pages/amigos/amigos';
 import { SplashPage } from '../pages/splash/splash';
+import { PerfilJogadorPage } from '../pages/perfil-jogador/perfil-jogador';
 
 @NgModule({
     declarations: [
@@ -59,7 +60,8 @@ import { SplashPage } from '../pages/splash/splash';
         RankingGlobal,
         RankingPorCla,
         RankingPorParticipantesDoCla,
-        SolicitaEs
+        SolicitaEs,
+        PerfilJogadorPage
 
     ],
     imports: [
@@ -97,7 +99,8 @@ import { SplashPage } from '../pages/splash/splash';
         RankingGlobal,
         RankingPorCla,
         RankingPorParticipantesDoCla,
-        SolicitaEs
+        SolicitaEs,
+        PerfilJogadorPage
     ],
     providers: [
         InAppBrowser,
