@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController, MenuController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, MenuController, LoadingController } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
 import { Storage } from '@ionic/storage';
 
@@ -18,8 +18,8 @@ export class PerfilJogadorPage {
   erros: any[];
 
   constructor(private storage: Storage, public navCtrl: NavController, public navParams: NavParams,
-    public restProvider: RestProvider, public toast: ToastController, public menuCtrl: MenuController) {
-
+    public restProvider: RestProvider, public toast: ToastController, public menuCtrl: MenuController, public loadingCtrl: LoadingController) {
+    this.presentLoading();
     this.model = new User();
 
     this.storage.get('id').then((data) => {
@@ -29,6 +29,14 @@ export class PerfilJogadorPage {
       this.preenchimento();
     })
 
+  }
+
+  presentLoading() {
+    let loader = this.loadingCtrl.create({
+      content: "CARREGANDO DADOS DO JOGADOR...",
+      duration: 3000
+    });
+    loader.present();
   }
 
   preenchimento() {

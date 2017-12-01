@@ -8,18 +8,13 @@
     </ion-navbar>
 </ion-header>
 <ion-content padding id="home">
-    <ion-searchbar (ionInput)="getJogos($event)"></ion-searchbar>
+    <ion-searchbar placeholder="Pesquisar por Jogo" (ionInput)="getJogos($event)"></ion-searchbar>
     <ion-list>
         <ion-item>
             <ion-label>Categoria</ion-label>
-            <ion-select (ionChange)=" getCategorias($event)">
-                <ion-option value="arcade">
-                    <ion-item >
-                        Arcade
-                    </ion-item>
-                </ion-option>
+            <ion-select>
+                <ion-option>Arcade</ion-option>
                 <ion-option>Estratégia</ion-option>
-
             </ion-select>
         </ion-item>
     </ion-list>

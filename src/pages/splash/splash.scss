@@ -17,6 +17,9 @@
                }
         
                #bars {
+
+                background-color: black;
+
                    height: 80%;
         
                    .cls-1 {
@@ -47,10 +50,14 @@
                        animation-fill-mode: forwards;
                    }
         
-                   .cls-5, .cls-6 {
+                   .cls-5 {
                        opacity: 0;
                        animation: 2s 1.5s linear fadeIn;
                        animation-fill-mode: forwards;
+                   }
+
+                   .colorindo{
+                       color: white;
                    }
         
                }
@@ -66,13 +73,6 @@
                transform: rotate3d(1, 1, 0, 0deg);
            }
         
-       }
-        
-       @keyframes fadeIn {
-        
-           100% {
-               opacity: 1;
-           }
-    
+       
     
 }

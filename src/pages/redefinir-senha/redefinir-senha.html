@@ -1,49 +1,45 @@
 <ion-header>
-    <ion-navbar>
-      <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-      <ion-title>
-        Recuperar Senha
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content padding id="Recuperar">
-  
-    <div class="fixed">
-      <form>
-        <ion-grid>
-          <ion-row>
-            <ion-col>
-                <p style="color:#000000;">
-                    Por não ter conseguido acessar sua conta, será enviada uma nova senha para o seu email!
-                  </p>
-              <ion-list class="posicao-input">
-                <ion-item>
-                  <ion-label>
-                    E-mail
-                  </ion-label>
-                  <ion-input type="text" [(ngModel)]="email.email" name="email"></ion-input>
-                </ion-item>
-              </ion-list>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-        <ion-grid>
-          <ion-row>
-            <ion-col>
-              <ion-list>
-  
-                <button ion-button color="positive" block style="color:#FFFFFF;border-radius:3px 3px 3px 3px;" (click)="enviarEmail()">
-                  Enviar
-                </button>
-                <br>
-               
-              </ion-list>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </form>
-    </div>
-  </ion-content>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Recuperar Senha
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="Recuperar">
+  <div class="fixed">
+    <form>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p style="color:#000000;">
+              Por não ter conseguido acessar sua conta, será enviada uma nova senha para o seu email!
+            </p>
+            <ion-list class="posicao-input">
+              <ion-item>
+                <ion-label floating>
+                  E-mail
+                </ion-label>
+                <ion-input type="text" [(ngModel)]="email.email" name="email"></ion-input>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-list>
+              <button ion-button color="positive" block style="color:#FFFFFF;border-radius:3px 3px 3px 3px;" (click)="enviarEmail()">
+                Enviar
+              </button>
+              <br>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </div>
+</ion-content>
