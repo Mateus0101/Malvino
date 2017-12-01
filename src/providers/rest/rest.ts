@@ -8,8 +8,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class RestProvider {
     //malvinoservice.hopto.org
-    public apiUrl = 'http://192.168.1.12:8080/Malvino/rest/JogadoresService';
-    public apiUrlRanking = 'http://192.168.1.12:8080/Malvino/rest/ScoreGame';
+    public apiUrl = 'http://localhost:8080/Malvino/rest/JogadoresService';
+    public apiUrlRanking = 'http://localhost:8080/Malvino/rest/ScoreGame';
 
     constructor(public http: Http) { }
 
@@ -54,7 +54,7 @@ export class RestProvider {
         return new Promise((resolve, reject) => {
             this.http.post(this.apiUrl + '/Salvar', data)
                 .subscribe((result: any) => {
-                    resolve(result.json())
+                    resolve(JSON.stringify(result))
                 },
                 (error) => {
                     reject(error.json())

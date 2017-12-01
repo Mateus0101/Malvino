@@ -51,11 +51,11 @@ export class Signup {
 
       this.restProvider.addJogador(this.jogadores)
       .then((result:any)=>{
-        
+        console.log(result.login);
         this.toast.create({ 
         message: 'Usuário criado com sucesso.', position: 'top', duration: 3000 }).present();
 
-        this.navCtrl.push(Login);
+        this.navCtrl.setRoot(Login);
 
       })
       .catch((error: any) => {

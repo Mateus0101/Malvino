@@ -51,9 +51,16 @@
                 <p *ngIf="todo.value.email != ''" style="color: red;">E-mail inválido!</p>
                 <p *ngIf="todo.value.email == ''" style="color: red;">Campo Obrigatório!</p>
               </ion-item>
-              <ion-item>
+              <!--<ion-item>
                 <ion-label floating>Gênero</ion-label>
                 <ion-input type="text" formControlName="genero" [(ngModel)]="model.genero"></ion-input>
+              </ion-item>-->
+              <ion-item>
+              <ion-label>Gênero</ion-label>
+              <ion-select formControlName="genero"  [(ngModel)]="model.genero">
+                  <ion-option value="M">Masculino</ion-option>
+                  <ion-option value="F">Feminino</ion-option>
+              </ion-select>
               </ion-item>
               <ion-item class="no-line error" *ngIf="!todo.controls.genero.valid  && (todo.controls.genero.dirty || submitAttempt) && !todo.controls.genero.pending">
                 <p *ngIf="todo.value.genero != ''" style="color: red;">Somente Letras!</p>
