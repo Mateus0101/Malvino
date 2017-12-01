@@ -83,6 +83,10 @@ export class PerfilJogadorPage {
       });
   }
 
+  teste(){
+    console.log(this.model.genero);
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad PerfilJogadorPage');
   }

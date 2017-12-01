@@ -34,14 +34,17 @@
                 <ion-input type="text" [(ngModel)]="model.email" name="email"></ion-input>
               </ion-item>
               <ion-item>
-                <ion-label floating>Gênero</ion-label>
-                <ion-input type="text" [(ngModel)]="model.genero" name="genero"></ion-input>
+                <ion-label>Gênero</ion-label>
+                <ion-select [(ngModel)]="model.genero" name="genero">
+                    <ion-option ng-value="M">Masculino</ion-option>
+                    <ion-option ng-value="F">Feminino</ion-option>
+                </ion-select>
               </ion-item>
             </ion-list>
           </ion-col>
         </ion-row>
       </ion-grid>
     </form>
-    <button ion-button color="positive" block style="color:#FFFFFF;border-radius:3px 3px 3px 3px;" type="submit" (click)="editarPerfil()">Salvar</button>
+    <button ion-button color="positive" block style="color:#FFFFFF;border-radius:3px 3px 3px 3px;" type="submit" (click)="teste()">Salvar</button>
   </div>
 </ion-content>

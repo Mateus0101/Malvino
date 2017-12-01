@@ -22,14 +22,16 @@ export class RedefinirSenha {
     loader.present();
   }
 
+  
+
   enviarEmail() {
+    this.presentLoading();
+
     this.restProvider.recuperarSenha(this.email)
     .then((result:any)=>{
-      this.presentLoading();
       this.toast.create({ message: 'Email enviado com sucesso!', position: 'botton', duration: 3000 }).present();
     })
     .catch((error:any)=>{
-      this.presentLoading();
       this.toast.create({ message: 'Email não encontrado!', position: 'botton', duration: 3000 }).present();
     })
   }
